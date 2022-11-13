@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">PaintApp</string>
+    <string-array name="forms">
+        <item>SQUARE</item>
+        <item>CIRCLE</item>
+        <item>LINE</item>
+    </string-array>
+</resources>
