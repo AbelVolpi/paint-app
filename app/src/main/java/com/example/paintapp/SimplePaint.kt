@@ -6,11 +6,14 @@ import android.graphics.drawable.ColorDrawable
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
+import com.example.paintapp.MainActivity.Companion.CIRCLE
+import com.example.paintapp.MainActivity.Companion.LINE
+import com.example.paintapp.MainActivity.Companion.SQUARE
 
 class SimplePaint(context: Context, attrs: AttributeSet?) : View(context, attrs) {
 
     private var cleanDraw = false
-    private var drawForm = "LINE"
+    private var drawForm = LINE
     private var pathList = mutableListOf<Path>()
     private var paintList = mutableListOf<Paint>()
 
@@ -49,24 +52,24 @@ class SimplePaint(context: Context, attrs: AttributeSet?) : View(context, attrs)
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
                     when (drawForm) {
-                        "CIRCLE" -> {
+                        CIRCLE -> {
                             currentPath.addCircle(localX, localY, 100F, Path.Direction.CW)
                         }
-                        "SQUARE" -> {
+                        SQUARE -> {
                             currentPath.addRect(RectF(localX - 70, localY - 70, localX + 70, localY + 70), Path.Direction.CW)
                         }
-                        "LINE" -> {
+                        LINE -> {
                             currentPath.moveTo(localX, localY)
                             currentPath.lineTo(localX, localY)
                         }
                     }
                 }
                 MotionEvent.ACTION_MOVE -> {
-                    if (drawForm == "LINE")
+                    if (drawForm == LINE)
                         currentPath.lineTo(localX, localY)
                 }
                 MotionEvent.ACTION_UP -> {
-                    if (drawForm == "LINE")
+                    if (drawForm == LINE)
                         currentPath.lineTo(localX, localY)
 
                     paintList.add(currentPaint)

@@ -17,15 +17,82 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-    <ImageView
-        android:id="@+id/imageViewColorPicker"
-        android:layout_width="83dp"
-        android:layout_height="80dp"
+    <LinearLayout
+        android:id="@+id/shape_group_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="@+id/guideline"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/wheel" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/shape_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:srcCompat="@drawable/shape_icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Shape" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/select_color_group_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/guideline"
+        app:layout_constraintStart_toEndOf="@id/shape_group_layout"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/select_color_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:elevation="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/guideline"
+            app:layout_constraintStart_toEndOf="@id/shape_group_layout"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/color_icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Color" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/erase_group_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/guideline"
+        app:layout_constraintStart_toEndOf="@id/select_color_group_layout"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/erase_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:elevation="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/guideline"
+            app:layout_constraintStart_toEndOf="@id/shape_group_layout"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/eraser_icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Erase" />
+
+    </LinearLayout>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -33,25 +100,5 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="125dp" />
-
-    <TextView
-        android:id="@+id/textViewCleanDraw"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Clean Draw"
-        android:layout_margin="10dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textViewChangeForm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="Change Form"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
